@@ -12,6 +12,9 @@
 		710BDD601AD6E82400D5F255 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 710BDD5F1AD6E82400D5F255 /* Images.xcassets */; };
 		710BDD631AD6E82400D5F255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 710BDD611AD6E82400D5F255 /* Main.storyboard */; };
 		710BDD6F1AD6E82400D5F255 /* P2AATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710BDD6E1AD6E82400D5F255 /* P2AATests.swift */; };
+		7125D7ED1AD6EA7D007157A3 /* AcceptDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125D7EC1AD6EA7D007157A3 /* AcceptDragView.swift */; };
+		7125D7EF1AD6F26A007157A3 /* pdf2png in Resources */ = {isa = PBXBuildFile; fileRef = 7125D7EE1AD6F26A007157A3 /* pdf2png */; };
+		7125D7F11AD6F60B007157A3 /* pdf2png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7125D7EE1AD6F26A007157A3 /* pdf2png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +27,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7125D7F01AD6F5ED007157A3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				7125D7F11AD6F60B007157A3 /* pdf2png in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		710BDD561AD6E82400D5F255 /* P2AA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2AA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		710BDD5A1AD6E82400D5F255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -34,6 +50,8 @@
 		710BDD681AD6E82400D5F255 /* P2AATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P2AATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		710BDD6D1AD6E82400D5F255 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		710BDD6E1AD6E82400D5F255 /* P2AATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2AATests.swift; sourceTree = "<group>"; };
+		7125D7EC1AD6EA7D007157A3 /* AcceptDragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptDragView.swift; sourceTree = "<group>"; };
+		7125D7EE1AD6F26A007157A3 /* pdf2png */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = pdf2png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +93,10 @@
 		710BDD581AD6E82400D5F255 /* P2AA */ = {
 			isa = PBXGroup;
 			children = (
+				7125D7EE1AD6F26A007157A3 /* pdf2png */,
 				710BDD5B1AD6E82400D5F255 /* AppDelegate.swift */,
 				710BDD5D1AD6E82400D5F255 /* ViewController.swift */,
+				7125D7EC1AD6EA7D007157A3 /* AcceptDragView.swift */,
 				710BDD5F1AD6E82400D5F255 /* Images.xcassets */,
 				710BDD611AD6E82400D5F255 /* Main.storyboard */,
 				710BDD591AD6E82400D5F255 /* Supporting Files */,
@@ -119,6 +139,7 @@
 				710BDD521AD6E82400D5F255 /* Sources */,
 				710BDD531AD6E82400D5F255 /* Frameworks */,
 				710BDD541AD6E82400D5F255 /* Resources */,
+				7125D7F01AD6F5ED007157A3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -189,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7125D7EF1AD6F26A007157A3 /* pdf2png in Resources */,
 				710BDD601AD6E82400D5F255 /* Images.xcassets in Resources */,
 				710BDD631AD6E82400D5F255 /* Main.storyboard in Resources */,
 			);
@@ -208,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7125D7ED1AD6EA7D007157A3 /* AcceptDragView.swift in Sources */,
 				710BDD5E1AD6E82400D5F255 /* ViewController.swift in Sources */,
 				710BDD5C1AD6E82400D5F255 /* AppDelegate.swift in Sources */,
 			);
@@ -397,6 +420,7 @@
 				710BDD741AD6E82400D5F255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		710BDD751AD6E82400D5F255 /* Build configuration list for PBXNativeTarget "P2AATests" */ = {
 			isa = XCConfigurationList;
@@ -405,6 +429,7 @@
 				710BDD771AD6E82400D5F255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
