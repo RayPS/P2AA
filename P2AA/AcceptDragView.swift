@@ -41,11 +41,36 @@ class AcceptDragView: NSView {
             pboard = sender.draggingPasteboard()
             if contains(pboard.types as [NSString],NSFilenamesPboardType) {
                 var files:[String] = pboard.propertyListForType(NSFilenamesPboardType) as [String]
-                println(files)
                 
                 
-                pdf2png("--dpi", "48", "--transparent", files[0])
-                pdf2png("--dpi", "72", "--transparent", files[0])
+
+                
+                for file in files{
+                    var fileLocation   = file.stringByDeletingLastPathComponent //path/to/the/file
+                    var fileName       = file.lastPathComponent                 //filename.ext
+                    var filePrefix     = fileName.stringByDeletingPathExtension //filename
+                    var fileExtension  = fileName.pathExtension                 //ext
+                    
+                    println(fileLocation)
+                    
+                    if (fileExtension == "pdf")
+                    {
+                        pdf2png("--dpi", "72", "--transparent", file, "--output", "\(fileLocation)/\(filePrefix).png")
+                    }
+                    else
+                    {
+                        var alert = NSAlert()
+                        alert.informativeText = "\(file) \n is not a pdf file."
+                        alert.messageText = "Something wrong"
+                        alert.showsHelp = false
+                        alert.addButtonWithTitle("Dismiss")
+                        alert.runModal()
+                    }
+                    
+                }
+                
+                
+                
                 
                 
                 
