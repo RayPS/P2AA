@@ -39,8 +39,8 @@ class AcceptDragView: NSView {
         var pboard:NSPasteboard! = sender.draggingPasteboard()
         if pboard != nil {
             pboard = sender.draggingPasteboard()
-            if contains(pboard.types as [NSString],NSFilenamesPboardType) {
-                var files:[String] = pboard.propertyListForType(NSFilenamesPboardType) as [String]
+            if contains(pboard.types as! [NSString],NSFilenamesPboardType) {
+                var files:[String] = pboard.propertyListForType(NSFilenamesPboardType) as! [String]
                 
                 
 
@@ -59,12 +59,25 @@ class AcceptDragView: NSView {
                     }
                     else
                     {
-                        var alert = NSAlert()
-                        alert.informativeText = "\(file) \n is not a pdf file."
-                        alert.messageText = "Something wrong"
-                        alert.showsHelp = false
+                        NSApp.abortModal()
+                        let alert:NSAlert = NSAlert()
+                        alert.alertStyle = .WarningAlertStyle
+                        alert.messageText = "Not a PDF file"
+                        alert.informativeText = "\(file)"
                         alert.addButtonWithTitle("Dismiss")
-                        alert.runModal()
+                        //alert.delegate = self
+                        alert.beginSheetModalForWindow(window!) { responseCode in
+                            if NSAlertSecondButtonReturn == responseCode {
+                                //println("SecondButton")
+                            }
+                        }
+                        
+                        
+                            
+                            
+                            
+                            
+                            
                     }
                     
                 }
