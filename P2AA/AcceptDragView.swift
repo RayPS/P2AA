@@ -72,19 +72,10 @@ class AcceptDragView: NSView {
                             }
                         }
                         
-                        
-                            
-                            
-                            
-                            
                             
                     }
                     
                 }
-                
-                
-                
-                
                 
                 
             }
