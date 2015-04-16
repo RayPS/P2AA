@@ -15,6 +15,8 @@
 		7125D7ED1AD6EA7D007157A3 /* AcceptDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7125D7EC1AD6EA7D007157A3 /* AcceptDragView.swift */; };
 		7125D7EF1AD6F26A007157A3 /* pdf2png in Resources */ = {isa = PBXBuildFile; fileRef = 7125D7EE1AD6F26A007157A3 /* pdf2png */; };
 		7125D7F11AD6F60B007157A3 /* pdf2png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7125D7EE1AD6F26A007157A3 /* pdf2png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		71FD73191AE02EC200E8020F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FD73181AE02EC200E8020F /* Data.swift */; };
+		71FD731B1AE034C300E8020F /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FD731A1AE034C300E8020F /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		710BDD6E1AD6E82400D5F255 /* P2AATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = P2AATests.swift; sourceTree = "<group>"; };
 		7125D7EC1AD6EA7D007157A3 /* AcceptDragView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptDragView.swift; sourceTree = "<group>"; };
 		7125D7EE1AD6F26A007157A3 /* pdf2png */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = pdf2png; sourceTree = "<group>"; };
+		71FD73181AE02EC200E8020F /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		71FD731A1AE034C300E8020F /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,13 +97,15 @@
 		710BDD581AD6E82400D5F255 /* P2AA */ = {
 			isa = PBXGroup;
 			children = (
-				7125D7EE1AD6F26A007157A3 /* pdf2png */,
+				710BDD611AD6E82400D5F255 /* Main.storyboard */,
 				710BDD5B1AD6E82400D5F255 /* AppDelegate.swift */,
 				710BDD5D1AD6E82400D5F255 /* ViewController.swift */,
 				7125D7EC1AD6EA7D007157A3 /* AcceptDragView.swift */,
+				71FD73181AE02EC200E8020F /* Data.swift */,
 				710BDD5F1AD6E82400D5F255 /* Images.xcassets */,
-				710BDD611AD6E82400D5F255 /* Main.storyboard */,
 				710BDD591AD6E82400D5F255 /* Supporting Files */,
+				71FD731A1AE034C300E8020F /* SwiftyJSON.swift */,
+				7125D7EE1AD6F26A007157A3 /* pdf2png */,
 			);
 			path = P2AA;
 			sourceTree = "<group>";
@@ -233,6 +239,8 @@
 				7125D7ED1AD6EA7D007157A3 /* AcceptDragView.swift in Sources */,
 				710BDD5E1AD6E82400D5F255 /* ViewController.swift in Sources */,
 				710BDD5C1AD6E82400D5F255 /* AppDelegate.swift in Sources */,
+				71FD731B1AE034C300E8020F /* SwiftyJSON.swift in Sources */,
+				71FD73191AE02EC200E8020F /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

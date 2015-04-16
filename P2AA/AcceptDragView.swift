@@ -1,12 +1,14 @@
 //
 //  AcceptDragView.swift
-//  SVGO
+//  P2AA
 //
 //  Created by Ray on 4/1/15.
 //  Copyright (c) 2015 RayPS. All rights reserved.
 //
 
 import Cocoa
+
+
 
 class AcceptDragView: NSView {
     
@@ -43,19 +45,29 @@ class AcceptDragView: NSView {
                 var files:[String] = pboard.propertyListForType(NSFilenamesPboardType) as! [String]
                 
                 
-
-                
                 for file in files{
                     var fileLocation   = file.stringByDeletingLastPathComponent //path/to/the/file
                     var fileName       = file.lastPathComponent                 //filename.ext
                     var filePrefix     = fileName.stringByDeletingPathExtension //filename
                     var fileExtension  = fileName.pathExtension                 //ext
                     
-                    println(fileLocation)
                     
                     if (fileExtension == "pdf")
                     {
-                        pdf2png("--dpi", "72", "--transparent", file, "--output", "\(fileLocation)/\(filePrefix).png")
+                        
+                        for (dpi_name: String, dpi_size: JSON) in Resolutions {
+
+                            var drawableFolder = "\(fileLocation)/drawable-\(dpi_name)"
+                            
+                            mkdir(drawableFolder)
+                            
+                            pdf2png("--dpi",
+                                    dpi_size.string!,
+                                    "--transparent",
+                                    file,
+                                    "--output",
+                                    "\(drawableFolder)/\(filePrefix).png")
+                        }
                     }
                     else
                     {
@@ -86,9 +98,18 @@ class AcceptDragView: NSView {
     
     
     
-    
+    func mkdir(args: String...) -> Int32 {
+        // I don't know how to create a folder with Swift :(
+        let task = NSTask()
+        task.launchPath = "/bin/mkdir"
+        task.arguments = args
+        task.launch()
+        task.waitUntilExit()
+        return task.terminationStatus
+    }
     
     func pdf2png(args: String...) -> Int32 {
+        // github.com/kaorukobo/pdf2png-mac
         let task = NSTask()
         task.launchPath = NSBundle.mainBundle().pathForResource("pdf2png", ofType: nil) as String!
         task.arguments = args
@@ -96,4 +117,5 @@ class AcceptDragView: NSView {
         task.waitUntilExit()
         return task.terminationStatus
     }
+    
 }
